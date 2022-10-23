@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Backend.index');
+  return view('Backend.index');
+});
+
+// Route::get('/backend/category/create', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'create']);
+
+
+
+
+Route::get('/create', function () {
+  return view('Backend.category.create');
 });

@@ -7,10 +7,19 @@
 
 @yield('html_head')
 
+@section('title', 'Admin')
+<title id="htmlTitle"> @yield('title') | KrishiKarma</title>
+
+
+</head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
     @yield('navbar')
     @yield('sidebar')
+
+    @yield('content')
+
     @yield('footer')
     @yield('plugins')
   </div>
