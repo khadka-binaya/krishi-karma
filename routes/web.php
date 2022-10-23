@@ -17,11 +17,6 @@ Route::get('/', function () {
   return view('Backend.index');
 });
 
-// Route::get('/backend/category/create', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'create']);
+Route::get('/category/create', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'create']);
 
-
-
-
-Route::get('/create', function () {
-  return view('Backend.category.create');
-});
+Route::get('/category', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'index']);
