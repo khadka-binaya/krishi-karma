@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/category/create', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'create']);
 
-Route::get('/category', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'index']);
+Route::get('/category/index', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'index']);
