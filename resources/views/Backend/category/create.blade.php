@@ -20,39 +20,31 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form method="POST" action="{{url('Category')}}">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  {{-- <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> --}}
+                  <label for="categoryName">Category Name</label> <br>
+                  <input type="text" class="form-control" name="categoryName" id="categoryName" placeholder="Category">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="categoryDetails">Category Details</label>
+                  <input type="text" class="form-control" name="categoryDetails" id="categoryName"
+                    placeholder="Details">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                    </div>
-                    <div class="input-group-append">
-                      <span class="input-group-text">Upload</span>
-                    </div>
-                  </div>
+                  <label for="categoryPrice">Money Offer</label>
+                  <br>
+                  <input type="text" name="categoryDetails" id="categoryPrice" class="form-control"
+                    placeholder="Price to be distributed">
                 </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-              </div>
-              <!-- /.card-body -->
+                <!-- /.card-body -->
 
-              <div class="card-footer">
-                <button type="submit" class="btn btn-success">Submit</button>
-                <button type="submit" class="btn btn-danger">Clear</button>
-              </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-success">Submit</button>
+                  <button type="submit" class="btn btn-danger">Clear</button>
+                </div>
             </form>
           </div>
         </div>
