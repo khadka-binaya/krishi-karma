@@ -17,9 +17,7 @@
   <div class="wrapper">
     @yield('navbar')
     @yield('sidebar')
-
     @yield('content')
-
     @yield('footer')
     @yield('plugins')
   </div>
