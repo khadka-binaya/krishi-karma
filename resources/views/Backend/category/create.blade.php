@@ -21,7 +21,7 @@
             <!-- /.card-header -->
             <!-- form start -->
             <form action="post">
-
+              @csrf
               <div class="card-body">
 
                 <div class="form-group">
