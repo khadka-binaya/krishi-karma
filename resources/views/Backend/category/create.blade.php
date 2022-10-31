@@ -3,6 +3,7 @@
 @section('title', 'Create Category')
 
 @section('content')
+
 <div class="content-wrapper">
   <section class="content-header">
     <div class="container-fluid">
@@ -20,31 +21,44 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="POST" action="{{url('Category')}}">
+            <form role="form" method="POST" action="{{url('Category')}}">
               <div class="card-body">
                 <div class="form-group">
                   {{-- <label for="exampleInputEmail1">Email address</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> --}}
                   <label for="categoryName">Category Name</label> <br>
-                  <input type="text" class="form-control" name="categoryName" id="categoryName" placeholder="Category">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Category">
                 </div>
                 <div class="form-group">
-                  <label for="categoryDetails">Category Details</label>
-                  <input type="text" class="form-control" name="categoryDetails" id="categoryName"
-                    placeholder="Details">
+                  <label for="categoryDetails">Slug</label>
+                  <input type="text" class="form-control" name="slug" id="slug" placeholder="Details">
                 </div>
                 <div class="form-group">
-                  <label for="categoryPrice">Money Offer</label>
-                  <br>
-                  <input type="text" name="categoryDetails" id="categoryPrice" class="form-control"
-                    placeholder="Price to be distributed">
-                </div>
-                <!-- /.card-body -->
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- select -->
+                      <div class="form-group">
+                        <label>Select Category</label>
+                        <select type="text" name="parent_id" class="form-control">
+                          <option value="">None</option>
+                          @if($categories)
+                          @foreach ($categories as $category)
+                          <?php $dash=''; ?>
+                          <option value="{{$category->id}}">{{$category->name}}</option>
+                          @if(count($category->subcategory))
+                          @include('subCategoryList-option',['subcategories' => $category->subcategory])
+                          @endif
+                          @endforeach
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-success">Submit</button>
-                  <button type="submit" class="btn btn-danger">Clear</button>
-                </div>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-danger">Clear</button>
+                  </div>
             </form>
           </div>
         </div>
