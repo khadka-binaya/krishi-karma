@@ -20,31 +20,29 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="post">
+            <form action="{{ route('category.store') }}" method="POST">
               @csrf
               <div class="card-body">
 
                 <div class="form-group">
-                  <label for="name">Category Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter the Category Name">
+                  <label for="name">Name Title</label>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Enter the Category Name">
                 </div>
                 <div class="form-group">
                   <label for="slug">Slug</label>
-                  <input type="text" class="form-control" id="slug" placeholder="Enter Slug">
+                  <input type="text" name="slug" class="form-control" id="slug" placeholder="Enter Slug">
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <input type="text" class="form-control" id="description" placeholder="Enter Description">
+                  <input type="text" name="description" class="form-control" id="description"
+                    placeholder="Enter Description">
                 </div>
                 <div class="form-group">
                   <label for="amount">Money</label>
-                  <input type="text" class="form-control" id="amount" placeholder="Enter the Amount">
+                  <input type="text" name="amount" class="form-control" id="amount" placeholder="Enter the Amount">
                 </div>
-
-
               </div>
               <!-- /.card-body -->
-
               <div class="card-footer">
                 <button type="submit" class="btn btn-success">Submit</button>
                 <button type="submit" class="btn btn-danger">Clear</button>

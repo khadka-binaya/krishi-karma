@@ -13,6 +13,7 @@
         <table id="example2" class="table table-bordered table-hover">
           <thead>
             <tr>
+              <th>S.N</th>
               <th>Name</th>
               <th>Slug</th>
               <th>Description</th>
@@ -21,18 +22,32 @@
             </tr>
           </thead>
           <tbody>
+            {{-- <td>Animal Husbandary</td>
+            <td>Animal</td>
+            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum qui, quidem vel aliquid commodi error?
+              Sint omnis perspiciatis voluptatem quaerat esse blanditiis quae. Expedita libero ullam ex maxime
+              necessitatibus neque.</td>
+            <td>10,000</td>
+            <td>
+              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-primary">Edit</button>
+            </td> --}}
+
+
+            @foreach ($categories as $category)
             <tr>
-              <td>Animal Husbandary</td>
-              <td>Animal</td>
-              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum qui, quidem vel aliquid commodi error?
-                Sint omnis perspiciatis voluptatem quaerat esse blanditiis quae. Expedita libero ullam ex maxime
-                necessitatibus neque.</td>
-              <td>10,000</td>
+              <td> {{ $category['id'] }} </td>
+              <td>{{$category['name']}}</td>
+              <td>{{$category['slug']}}</td>
+              <td>{{$category['description']}}</td>
+              <td>{{$category['amount']}}</td>
               <td>
                 <button type="button" class="btn btn-danger">Delete</button>
                 <button type="button" class="btn btn-primary">Edit</button>
               </td>
             </tr>
+            @endforeach
+
           </tbody>
           <tfoot>
             <tr>
