@@ -20,6 +20,3 @@ Route::get('/', function () {
 });
 
 Route::resource('category', CategoriesController::class);
-
-
-// Route::post('category')
