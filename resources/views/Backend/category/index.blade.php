@@ -22,18 +22,6 @@
             </tr>
           </thead>
           <tbody>
-            {{-- <td>Animal Husbandary</td>
-            <td>Animal</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum qui, quidem vel aliquid commodi error?
-              Sint omnis perspiciatis voluptatem quaerat esse blanditiis quae. Expedita libero ullam ex maxime
-              necessitatibus neque.</td>
-            <td>10,000</td>
-            <td>
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button type="button" class="btn btn-primary">Edit</button>
-            </td> --}}
-
-
             @foreach ($categories as $category)
             <tr>
               <td> {{ $category['id'] }} </td>
@@ -42,12 +30,15 @@
               <td>{{$category['description']}}</td>
               <td>{{$category['amount']}}</td>
               <td>
-                <button type="button" class="btn btn-danger">Delete</button>
-                <button type="button" class="btn btn-primary">Edit</button>
+                <a href="{{ route('category.edit',$category->id)}}" class="btn btn-primary">Edit</a>
+                <form action="{{ route('category.destroy', $category->id)}}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
               </td>
             </tr>
             @endforeach
-
           </tbody>
           <tfoot>
             <tr>

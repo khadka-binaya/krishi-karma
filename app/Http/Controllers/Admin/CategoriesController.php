@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use Dotenv\Validator;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\Console\Input\Input;
 
 class CategoriesController extends Controller
 {
@@ -16,6 +20,7 @@ class CategoriesController extends Controller
    */
   public function index()
   {
+
     // return view('Backend.category.index');
     $data = Category::all();
     return view('Backend.category.index', ['categories' => $data]);
@@ -41,9 +46,6 @@ class CategoriesController extends Controller
 
   public function store(Request $request)
   {
-
-    //
-
     $category = new Category;
     $category->name = $request->name;
     $category->slug = $request->slug;
@@ -66,7 +68,7 @@ class CategoriesController extends Controller
     //
     // $data = Category::all();
     // return view('category.index', ['members' => $data]);
-    $data = Category::all();
+    // $data = Category::all();
     // dd($data);
     // return view('category.index', ['categories' => $data]);
   }
@@ -78,9 +80,17 @@ class CategoriesController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit($id)
+
+
+  public function edit($id, Request $request)
   {
     //
+    // $data = Category::all();
+    $category = Category::find($id);
+    return view('Backend.category.edit', compact('category'));
+
+    // return view('category/{{ $categories->id }}/edit', ['categories' => ]);
+    // return redirect(route('category.index'));
   }
 
   /**
@@ -92,7 +102,15 @@ class CategoriesController extends Controller
    */
   public function update(Request $request, $id)
   {
-    //
+
+    $categories = Category::find($id);
+    $categories->name = $request->has('name') ? $request->input('name') : '';
+    $categories->slug = $request->input('slug');
+    $categories->description = $request->input('description');
+    $categories->amount = $request->input('amount');
+    $categories->update();
+    return redirect('/category');
+    // return redirect()->back()->with('status', 'successfully update!');
   }
 
   /**
@@ -101,8 +119,11 @@ class CategoriesController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
+
   public function destroy($id)
   {
-    //
+    $category = Category::find($id);
+    $category->delete();
+    return redirect('/category')->with('success', 'Item Removed');
   }
 }

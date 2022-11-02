@@ -18,4 +18,8 @@ Route::get('/', function () {
   return view('Backend.index');
 });
 
-Route::resource('category', 'App\Http\Controllers\Admin\CategoriesController');
+
+Route::resource('category', CategoriesController::class);
+
+
+// Route::post('category')
