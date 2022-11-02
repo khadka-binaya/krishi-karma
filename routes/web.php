@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ Route::get('/', function () {
   return view('Backend.index');
 });
 
-Route::get('/category/create', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'create']);
 
-Route::get('/category', [\App\Http\Controllers\Admin\CategoryCrudController::class, 'index']);
+Route::resource('category', CategoriesController::class);
+
+
+// Route::post('category')
