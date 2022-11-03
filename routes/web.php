@@ -26,8 +26,17 @@ Route::get('/', function () {
 });
 
 
-Route::resource('category', CategoriesController::class);
+Route::group(['IsAdmin' => 'admin'], function () {
+  Route::resource('category', CategoriesController::class);
+});
+
+// Route::resource('category', CategoriesController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('Backend.index');
+
+
+Route::get('/homepage', function () {
+  return view('Frontend.index');
+});

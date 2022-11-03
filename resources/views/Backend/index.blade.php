@@ -8,7 +8,7 @@
 @yield('html_head')
 
 @section('title', 'Admin')
-<title id="htmlTitle"> @yield('title') | KrishiKarma</title>
+<title id="htmlTitle"> @yield('title') | कृषिकर्म</title>
 
 
 </head>
