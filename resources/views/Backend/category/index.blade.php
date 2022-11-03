@@ -42,11 +42,12 @@
           </tbody>
           <tfoot>
             <tr>
+              <th>SN</th>
               <th>Name</th>
               <th>Slug</th>
               <th>Description</th>
               <th>Total Amount</th>
-              <th>Changes</th>
+              <th>Button Options</th>
             </tr>
           </tfoot>
         </table>

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoriesController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Middleware\Authenticate;
 
 
 /*
@@ -15,8 +17,17 @@ use App\Http\Controllers\Admin\CategoriesController;
 |
 */
 
+// Route::get('/', function () {
+//   return view('welcome');
+// });
+
 Route::get('/', function () {
-  return view('Backend.index');
+  return view('welcome');
 });
 
+
 Route::resource('category', CategoriesController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('Backend.index');
