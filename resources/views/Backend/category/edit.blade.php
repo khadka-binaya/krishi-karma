@@ -24,26 +24,26 @@
           <div class="card-body">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" id="name" class="form-control" value="{{ $category->name }}">
+              <input type="text" name="name" value="{{$category->name}}" class="form-control" id="name">
             </div>
             <div class="form-group">
-              <label for="slug">Slug</label>
-              <input type="text" name="slug" id="slug" class="form-control" value="{{ $category->slug }}">
+              <label for="tag">Tag</label>
+              <input type="text" name="tag" value="{{$category->tag}}" class="form-control" id="tag">
             </div>
             <div class="form-group">
-              <label for="description">Description</label>
-              <input type="text" name="description" id="description" class="form-control"
-                value="{{ $category->description }}">
+              <label for="type">Type</label>
+              <input type="text" name="type" value="{{$category->type}}" class="form-control" id="type">
             </div>
             <div class="form-group">
-              <label for="amount">Money</label>
-              <input type="text" name="amount" id="amount" class="form-control" value="{{ $category->amount }}">
+              <label for="amount">Field</label>
+              <input type="text" name="field" value="{{$category->field}}" class="form-control" id="field">
             </div>
           </div>
           <!-- /.card-body -->
-          <div class="card-footer">
+          <div class=" card-footer">
             <button type="submit" value="Edit" class="btn btn-success">Edit</button>
-            <button type="submit" class="btn btn-danger">Cancel</button>
+            {{-- <button type="submit" class="btn btn-danger">Cancel</button> --}}
+            <a href="" class="btn btn-danger" target="_blank" rel="noopener noreferrer">Cancel</a>
           </div>
         </form>
       </div>

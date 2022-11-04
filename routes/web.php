@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoriesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate;
-
+use App\Http\Controllers\Admin\PackageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +28,7 @@ Route::get('/', function () {
 
 Route::group(['IsAdmin' => 'admin'], function () {
   Route::resource('category', CategoriesController::class);
+  Route::resource('package', PackageController::class);
 });
 
 // Route::resource('category', CategoriesController::class);

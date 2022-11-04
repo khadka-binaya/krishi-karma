@@ -15,10 +15,10 @@
             <tr>
               <th>S.N</th>
               <th>Name</th>
-              <th>Slug</th>
-              <th>Description</th>
-              <th>Total Amount</th>
-              <th>Edit</th>
+              <th>Tag</th>
+              <th>Type</th>
+              <th>Field</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -26,9 +26,9 @@
             <tr>
               <td> {{ $category['id'] }} </td>
               <td>{{$category['name']}}</td>
-              <td>{{$category['slug']}}</td>
-              <td>{{$category['description']}}</td>
-              <td>{{$category['amount']}}</td>
+              <td>{{$category['tag']}}</td>
+              <td>{{$category['type']}}</td>
+              <td>{{$category['field']}}</td>
               <td>
                 <a href="{{ route('category.edit',$category->id)}}" class="btn btn-primary">Edit</a>
                 <form action="{{ route('category.destroy', $category->id)}}" method="post">
@@ -42,12 +42,12 @@
           </tbody>
           <tfoot>
             <tr>
-              <th>SN</th>
+              <th>S.N</th>
               <th>Name</th>
-              <th>Slug</th>
-              <th>Description</th>
-              <th>Total Amount</th>
-              <th>Button Options</th>
+              <th>Tag</th>
+              <th>Type</th>
+              <th>Field</th>
+              <th>Action</th>
             </tr>
           </tfoot>
         </table>

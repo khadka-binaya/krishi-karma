@@ -19,23 +19,21 @@
         <form action="{{ route('category.store') }}" method="POST">
           @csrf
           <div class="card-body">
-
             <div class="form-group">
-              <label for="name">Title</label>
+              <label for="name">Name</label>
               <input type="text" name="name" class="form-control" id="name" placeholder="Enter the Category Name">
             </div>
             <div class="form-group">
-              <label for="slug">Slug</label>
-              <input type="text" name="slug" class="form-control" id="slug" placeholder="Enter Slug">
+              <label for="tag">Tag</label>
+              <input type="text" name="tag" class="form-control" id="tag" placeholder="Enter tag">
             </div>
             <div class="form-group">
-              <label for="description">Description</label>
-              <input type="text" name="description" class="form-control" id="description"
-                placeholder="Enter Description for the package">
+              <label for="type">Type</label>
+              <input type="text" name="type" class="form-control" id="type" placeholder="Enter type for the package">
             </div>
             <div class="form-group">
-              <label for="amount">Money</label>
-              <input type="text" name="amount" class="form-control" id="amount" placeholder="Enter the Amount">
+              <label for="amount">Field</label>
+              <input type="text" name="field" class="form-control" id="field" placeholder="Enter the field">
             </div>
           </div>
           <!-- /.card-body -->

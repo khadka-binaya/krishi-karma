@@ -48,9 +48,9 @@ class CategoriesController extends Controller
   {
     $category = new Category;
     $category->name = $request->name;
-    $category->slug = $request->slug;
-    $category->description = $request->description;
-    $category->amount = $request->amount;
+    $category->tag = $request->tag;
+    $category->type = $request->type;
+    $category->field = $request->field;
     $category->save();
 
     return redirect(route('category.index'));
@@ -105,9 +105,9 @@ class CategoriesController extends Controller
 
     $categories = Category::find($id);
     $categories->name = $request->has('name') ? $request->input('name') : '';
-    $categories->slug = $request->input('slug');
-    $categories->description = $request->input('description');
-    $categories->amount = $request->input('amount');
+    $categories->tag = $request->input('tag');
+    $categories->type = $request->input('type');
+    $categories->field = $request->input('field');
     $categories->update();
     return redirect('/category');
     // return redirect()->back()->with('status', 'successfully update!');
