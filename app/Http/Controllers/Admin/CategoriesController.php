@@ -110,7 +110,6 @@ class CategoriesController extends Controller
     $categories->field = $request->input('field');
     $categories->update();
     return redirect('/category');
-    // return redirect()->back()->with('status', 'successfully update!');
   }
 
   /**
