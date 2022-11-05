@@ -9,4 +9,9 @@ class Package extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'description', 'created_date', 'expire_date', 'type', 'tag', 'image'];
+
+    public function categories()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -1,13 +1,13 @@
 @extends('Backend.index')
 
-@section('title', 'Category Index')
+@section('title', 'Category')
 
 @section('content')
 <div class="content-wrapper">
   <section class="content-header">
     <div class="container-fluid">
       <div class="col-sm-6">
-        <h1>Category</h1>
+        <h1>Category Index</h1>
       </div>
       <div class="card-body">
         <table id="example2" class="table table-bordered table-hover">

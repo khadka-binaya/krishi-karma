@@ -2,6 +2,7 @@
 
 @section('title', 'Packages')
 
+
 @section('content')
 <div class="content-wrapper">
   <div class="col-sm-6">
@@ -16,32 +17,30 @@
         <div class="card-header">
           <h3 class="card-title">Package</h3>
         </div>
-        <form action="{{ route('package.store') }}" method="POST">
+        <form action="{{ route('package.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="card-body">
 
             <div class="form-group">
               <label for="name">Title</label>
-              <input type="text" name="name" class="form-control" id="name" placeholder="Enter the Category Name">
+              <input type="text" name="title" class="form-control" id="name" placeholder="Enter the Category Name">
             </div>
             <div class="form-group">
-              <label for="slug">Slug</label>
-              <input type="text" name="slug" class="form-control" id="slug" placeholder="Enter Slug">
+              <label for="tag">tag</label>
+              <input type="text" name="tag" class="form-control" id="tag" placeholder="Enter tag">
             </div>
             <div class="form-group">
-              <div class="col-sm-4">
-                <!-- select -->
-                <div class="form-group">
-                  <label>Select</label>
-                  <select class="form-control">
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>
-                </div>
-              </div>
+              <label for="type">type</label>
+              <input type="text" name="type" class="form-control" id="type" placeholder="Enter type">
+            </div>
+
+            <div class="form-group">
+              <label>Categories</label>
+              <select class="form-control" name="category_id" id="category_id">
+                @foreach($data['categories'] as $category)
+                <option value="{{$category->id}}"> {{$category->name}} </option>
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
               <label for="description">Description</label>
@@ -49,9 +48,19 @@
                 placeholder="Enter Description for the package">
             </div>
             <div class="form-group">
-              <label for="amount">Money</label>
-              <input type="text" name="amount" class="form-control" id="amount" placeholder="Enter the Amount">
+              <label for="created_date">Created Date</label>
+              <input type="date" name="created_date" id="created_date" placeholder="">
             </div>
+            <div class="form-group">
+              <label for="expire_date">Expire Date</label>
+              <input type="date" name="expire_date" id="expire_date" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <label for="image">Image</label>
+              <input type="file" name="image" id="image">
+            </div>
+
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
