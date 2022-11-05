@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\Home\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,6 @@ use App\Http\Controllers\Admin\PackageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//   return view('welcome');
-// });
 
 Route::get('/', function () {
   return view('welcome');
@@ -38,6 +35,15 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('Backend.index');
 
 
-Route::get('/homepage', function () {
-  return view('Frontend.index');
-});
+Route::post('pay', [PaymentController::class, 'pay'])->name('payment');
+Route::get('success', [PaymentController::class, 'success']);
+Route::get('error', [PaymentController::class, 'error']);
+
+
+// Route::get('/homepage', function () {
+//   return view('Frontend.index', );
+// });
+
+Route::get('/homepage', [HomepageController::class, 'index']);
+
+Route::get('frontend/package', [HomepageController::class, 'showpackages'])->name('frontend.package');
