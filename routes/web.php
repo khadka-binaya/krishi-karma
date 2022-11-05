@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\Home\HomepageController;
 
 /*
@@ -22,7 +23,6 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-
 Route::group(['IsAdmin' => 'admin'], function () {
   Route::resource('category', CategoriesController::class);
   Route::resource('package', PackageController::class);
@@ -34,16 +34,22 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('Backend.index');
 
-
 Route::post('pay', [PaymentController::class, 'pay'])->name('payment');
 Route::get('success', [PaymentController::class, 'success']);
 Route::get('error', [PaymentController::class, 'error']);
-
 
 // Route::get('/homepage', function () {
 //   return view('Frontend.index', );
 // });
 
-Route::get('/homepage', [HomepageController::class, 'index']);
+Route::get('/homepage', [HomepageController::class, 'index'])->name('frontend.homepage');
 
 Route::get('frontend/package', [HomepageController::class, 'showpackages'])->name('frontend.package');
+
+
+// for form data to admin
+Route::get('form', [FormController::class, 'index'])->name('form-fillpage');
+Route::post('form-store', [FormController::class, 'store'])->name('form-store');
+
+
+Route::get('form-details', [FormController::class, 'show'])->name('form-details');
