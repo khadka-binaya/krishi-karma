@@ -1,8 +1,9 @@
 ## About Krishi Karma
 
 Krishi Karma is and online donating website where the government officials are donating crops and money to the farmer.
-The main agenda of this online website is to engage more farmers and donation of crops and money can be done eaisly from online. 
-which helps in visibility of the donation and engages more and more farmers and motivate them to cultivate more and more.
+The main agenda of this online website is to engage more farmers and the easy and best way for donating crops and money which can be done online. 
+This helps in visibility of the donation and engages more and more farmers and motivate them to cultivate more and more.
+And Further more It's main aim is for farmers to help them with the knowledge to learn more about the season and crops and what to do with the aim to give knowledge about the farming. And Also selling the tools for farming.
 
 ### Krishi Karma Members
 
