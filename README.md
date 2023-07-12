@@ -1,3 +1,20 @@
+## About Krishi Karma
+
+Krishi Karma is and online donating website where the government officials are donating crops and money to the farmer.
+The main agenda of this online website is to engage more farmers and donation of crops and money can be done eaisly from online. 
+which helps in visibility of the donation and engages more and more farmers and motivate them to cultivate more and more.
+
+### Krishi Karma Members
+
+This project is done for the 6th semester project. And Project is done for Ecommerce and Egovernance and Software Engineering. 
+The Members contributing to this projects are 
+- Binaya Khadka
+- Niraj Uprety
+- Krijan Chakradhar
+
+More Information Contact At
+<a href="mailto:binayamm@gmail.com"> binayamm@gmail </a>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
